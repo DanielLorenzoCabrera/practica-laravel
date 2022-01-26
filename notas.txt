@@ -1,0 +1,42 @@
+CREAR UN PROYECTO EN LARAVEL (en este caso con el nombre blog)
+    composer create-project --prefer-dist laravel/laravel blog
+
+Configuracion bd en fichero -> .env (Para la conexión con la base de datos)
+
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=blog
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+MIGRACIONES 
+    Las migraciones en Laravel son una herramienta que nos permite crear una especie de sistema de control de 
+    versiones de bases de datos donde podemos definir tablas con POO en vez de SQL.
+    Nos permite crear las tablas de SQL
+
+comando -> php artisan make:migration create_[nombreTabla]_table --create=[nombreTabla]
+
+* MIGRACION DE TABLAS -> php artisan migrate
+* DESHACER MIGRACIONES Y VOLVER A EJECUTARLAS -> php artisan migrate:refresh
+
+
+- SEEDER -> Nos permite generar datos de prueba (Necesario crear un seeder para cada tabla)
+
+    * CREAR SEEDER -> php artisan make:seeder PostSeeder (En este caso es un seeder para la tabla Posts)
+    * EJECUTAR DATABASE SEEDER (SEEDER PRINCIPAL) -> php artisan db:seed (Desde aqui podemos llamar al resto de seeder para ejecutarlos todos)
+    * EJECUTAR SEEDER DE UNA CLASE CONCRETA -> php artisan db:seed --class=PostSeeder
+
+NOTA. Cada vez que se realice un cambio realizamos una migración
+
+CONTROLADORES
+
+    *CREAR CONTROLADOR ->  php artisan make:controller PostController --resource --model=Post
+
+
+TINKER
+
+    php artisan tinker -> abre una consola que nos permite hacer pruebas
+        indicamos la ruta completa de donde deseemos hacer las pruebas
+        ej.  App\Models\Post::all() -> devuelve todos los datos
+        ej. App\Models\Post::find(223) -> devuelve el registro con el id 223
