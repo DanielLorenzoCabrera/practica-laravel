@@ -10,8 +10,8 @@ Configuracion bd en fichero -> .env (Para la conexión con la base de datos)
     DB_USERNAME=root
     DB_PASSWORD=
 
-MIGRACIONES 
-    Las migraciones en Laravel son una herramienta que nos permite crear una especie de sistema de control de 
+MIGRACIONES
+    Las migraciones en Laravel son una herramienta que nos permite crear una especie de sistema de control de
     versiones de bases de datos donde podemos definir tablas con POO en vez de SQL.
     Nos permite crear las tablas de SQL
 
@@ -40,3 +40,26 @@ TINKER
         indicamos la ruta completa de donde deseemos hacer las pruebas
         ej.  App\Models\Post::all() -> devuelve todos los datos
         ej. App\Models\Post::find(223) -> devuelve el registro con el id 223
+
+
+                                    $ CURSO LARAVEL $
+
+INSTALAR LARAVEL DE FORMA GLOBAL
+
+En xamp/htdocs -> composer global require laravel/installer
+    *NOTA*  (Por defecto la consola de mac .zshrc no reconocerá el comando laravel)
+    Por lo que hay que realizar lo siguiente
+    En terminal -> open -e ~/.zshrc
+    Añadir al final del fichero -> PATH="$HOME/.composer/vendor/bin:$PATH"
+
+
+    *   CREAR UN PROYECTO -> laravel new [nombreProyecto]
+
+
+
+- /PUBLIC
+Todos los archivos que querramos que acceda el usuario se almacenan en /public, como el index.php y css.
+Las diferentes rutas de la página se definen en -> /routes/web.php
+
+
+
